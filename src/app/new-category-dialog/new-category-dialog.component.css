@@ -1,0 +1,13 @@
+form {
+  width: 70%;
+  margin: 0 auto;
+  padding: 2rem 0rem;
+}
+
+.full-width {
+  width: 100%;
+}
+
+button {
+  margin-top: .5rem;
+}

@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="header">
+      <h1>Articles</h1>
+      <span class="spacer"></span>
+      <a mat-fab color="accent" routerLink="/create">
+        <mat-icon aria-label="add">add</mat-icon>
+      </a>
+    </div>
+
+    <div class="table-container mat-elevation-z2">
+      <div class="table-header">
+        <mat-form-field>
+          <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+        </mat-form-field>
+      </div>
+      <mat-table [dataSource]="dataSource">
+
+        <ng-container matColumnDef="title">
+          <mat-header-cell *matHeaderCellDef> Title </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.title}} </mat-cell>
+        </ng-container>
+    
+        <ng-container matColumnDef="slug">
+          <mat-header-cell *matHeaderCellDef> Slug </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.slug}} </mat-cell>
+        </ng-container>
+    
+        <ng-container matColumnDef="author">
+          <mat-header-cell *matHeaderCellDef> Author </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.author}} </mat-cell>
+        </ng-container>
+    
+        <ng-container matColumnDef="created">
+          <mat-header-cell *matHeaderCellDef> Created </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.created | date }} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="status">
+          <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.status}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+          <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+          <mat-cell *matCellDef="let element">            
+            <a mat-icon-button title="edit" routerLink="/edit/{{ element.id }}">
+              <mat-icon color="primary">create</mat-icon>
+            </a>
+            <button mat-icon-button title="remove" (click)="confirm(element)">
+              <mat-icon color="primary">remove_circle_outline</mat-icon>
+            </button>
+          </mat-cell>
+        </ng-container>
+    
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+    </div>
+</div>

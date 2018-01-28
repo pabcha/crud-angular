@@ -1,0 +1,51 @@
+<div class="container">
+  <mat-card>
+    <mat-card-title>Create Article</mat-card-title>
+    
+    <form class="create-article-form" #form="ngForm" (ngSubmit)="onSubmit(form.value)" autocomplete="off">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Title" name="title" ngModel>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Slug" name="slug" ngModel>
+      </mat-form-field>
+
+      <div>
+        <mat-form-field>
+          <mat-select placeholder="Category" name="category">
+            <mat-option *ngFor="let cat of categories;" [value]="cat.id">
+              {{ cat.name }}
+            </mat-option>
+          </mat-select>        
+        </mat-form-field>
+        <a mat-button (click)="btnAddCategory()">Add new category</a>
+      </div>
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Author" name="author" ngModel>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <textarea matInput placeholder="Body" rows="10" name="body" ngModel></textarea>
+      </mat-form-field>
+
+      <div class="row-input">
+        <mat-radio-group name="status" ngModel>
+          <mat-radio-button [value]="statuses[0]">
+            {{ statuses[0] }}
+          </mat-radio-button>
+          <mat-radio-button [value]="statuses[1]">
+            {{ statuses[1] }}
+          </mat-radio-button>
+        </mat-radio-group>       
+      </div>
+      
+      <div class="row-buttons">
+        <span class="spacer"></span>
+        <a routerLink="/articles" class="form-btn" mat-button>Go Back</a>
+        <button type="submit" class="form-btn" mat-raised-button color="accent">Create</button>
+      </div>
+    </form>    
+  </mat-card>
+</div>

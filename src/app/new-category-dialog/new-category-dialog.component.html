@@ -1,0 +1,10 @@
+<form #form="ngForm" (ngSubmit)="onSubmit(form.value)" autocomplete="off">
+  <mat-form-field class="full-width">
+    <input matInput type="text" name="name" placeholder="Name" ngModel #name="ngModel" required>
+    <mat-error *ngIf="name.errors && name.touched">This field is required</mat-error>
+  </mat-form-field>
+  <mat-dialog-actions>
+    <button type="submit" mat-button color="accent" [disabled]="form.invalid">Add new category</button>
+    <button mat-button mat-dialog-close>Cancel</button>
+  </mat-dialog-actions>
+</form>
