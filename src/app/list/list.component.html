@@ -17,12 +17,12 @@
 
         <ng-container matColumnDef="title">
           <mat-header-cell *matHeaderCellDef> Title </mat-header-cell>
-          <mat-cell *matCellDef="let element"> {{element.title}} </mat-cell>
+          <mat-cell *matCellDef="let element"> {{ element.title | maxChar:15 }} </mat-cell>
         </ng-container>
     
         <ng-container matColumnDef="slug">
           <mat-header-cell *matHeaderCellDef> Slug </mat-header-cell>
-          <mat-cell *matCellDef="let element"> {{element.slug}} </mat-cell>
+          <mat-cell *matCellDef="let element"> {{ element.slug | maxChar:15 }} </mat-cell>
         </ng-container>
     
         <ng-container matColumnDef="author">

@@ -27,6 +27,7 @@ import { FormEditComponent } from './form-edit/form-edit.component';
 import { ArticleService } from './shared/article.service';
 import { CategoryService } from './shared/category.service';
 import { NewCategoryDialogComponent } from './new-category-dialog/new-category-dialog.component';
+import { MaxCharPipe } from './shared/pipes.pipe';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { NewCategoryDialogComponent } from './new-category-dialog/new-category-d
     FormCreateComponent,
     ConfirmDialogComponent,
     FormEditComponent,
-    NewCategoryDialogComponent
+    NewCategoryDialogComponent,
+    MaxCharPipe
   ],
   imports: [
     BrowserModule,
