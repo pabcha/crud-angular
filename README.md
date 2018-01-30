@@ -1,7 +1,7 @@
 # CRUD Angular 5 application
 Basic CRUD [Angular 5](https://angular.io/) application. Users can create, edit, delete and browse a list of articles from mock file. This project also includes [Angular Material](https://material.angular.io/components/table/overview) components like table, buttons, popups, etc.
 
-![Application in action](https://i.imgur.com/5XxN4ws.gifv)
+![Application in action](https://i.imgur.com/5XxN4ws.gif)
 
 ## Live Demo
 Try live demo [here](http://pabcha.github.io/apps/crud-angular/)
